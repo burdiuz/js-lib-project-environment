@@ -1,0 +1,43 @@
+{
+  "name": "js-lib-environment",
+  "description": "",
+  "version": "0.0.0",
+  "main": "index.js",
+  "keywords": [
+    "js",
+    "javascript"
+  ],
+  "homepage": "https://github.com/burdiuz/js-lib-environment",
+  "bugs": {
+    "url": "https://github.com/burdiuz/js-lib-environment/issues",
+    "email": "burdiuz@gmail.com"
+  },
+  "license": "MIT",
+  "author": "Oleg Galaburda <burdiuz@gmail.com> (http://actualwave.com/)",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/burdiuz/js-lib-environment.git"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "babel-core": "^6.22.1",
+    "babel-loader": "^6.2.10",
+    "babel-preset-latest": "^6.22.0",
+    "babel-preset-stage-0": "^6.22.0",
+    "chai": "^3.5.0",
+    "karma": "^0.13.16",
+    "karma-coverage": "^1.1.1",
+    "karma-coveralls": "^1.1.2",
+    "karma-firefox-launcher": "^0",
+    "karma-mocha": "^0.2.2",
+    "karma-sinon-chai": "^1.2.4",
+    "karma-webpack": "^2.0.2",
+    "mocha": "^2.4.5",
+    "sinon": "^1.17.3",
+    "sinon-chai": "^2.8.0",
+    "webpack": "^2.2.1"
+  },
+  "scripts": {
+    "test": "./node_modules/.bin/karma start --single-run --browsers Firefox karma.conf.js"
+  }
+}

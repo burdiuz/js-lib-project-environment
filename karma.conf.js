@@ -10,8 +10,9 @@ module.exports = (config) => {
     exclude: [],
 
     preprocessors: {
-      'source/**/*.js': ['coverage', 'webpack'],
-      'tests/**/*.js': ['webpack'],
+      'source/**/!(*.spec).js': ['coverage', 'webpack'],
+      'source/**/*.spec.js': ['webpack'],
+      'tests/**/*.js': ['webpack']
     },
     reporters: ['coverage', 'progress', 'coveralls'],
     coverageReporter: {
@@ -42,7 +43,7 @@ module.exports = (config) => {
     logLevel: config.LOG_INFO,
     // enable / disable watching file and executing tests whenever any file changes
     autoWatch: true,
-    browsers: ['Firefox'],
+    browsers: ['Chrome'],
     //browsers: ['Chrome', 'IE', 'Firefox'],
     // Continuous Integration mode
     // if true, Karma captures browsers, runs the tests and exits

@@ -2,7 +2,7 @@
   "name": "js-lib-environment",
   "description": "",
   "version": "0.0.0",
-  "main": "index.js",
+  "main": "dist/lib.js",
   "keywords": [
     "js",
     "javascript"
@@ -23,8 +23,8 @@
   "devDependencies": {
     "babel-core": "^6.22.1",
     "babel-loader": "^6.2.10",
+    "babel-plugin-istanbul": "^4.0.0",
     "babel-preset-latest": "^6.22.0",
-    "babel-preset-stage-0": "^6.22.0",
     "chai": "^3.5.0",
     "eslint": "^3.14.1",
     "flow": "^0.2.3",
@@ -34,13 +34,17 @@
     "karma-firefox-launcher": "^0",
     "karma-mocha": "^0.2.2",
     "karma-sinon-chai": "^1.2.4",
+    "karma-sourcemap-loader": "^0.3.7",
     "karma-webpack": "^2.0.2",
     "mocha": "^2.4.5",
     "sinon": "^1.17.3",
     "sinon-chai": "^2.8.0",
-    "webpack": "^2.2.1"
+    "webpack": "^2.2.1",
+    "webpack-dev-server": "^2.4.1"
   },
   "scripts": {
+    "start": "webpack",
+    "server": "./node_modules/.bin/webpack-dev-server --port 8081 --config webpack.config.main.js --open",
     "test": "./node_modules/.bin/karma start --single-run --browsers Firefox karma.conf.js"
   }
 }

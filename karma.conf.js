@@ -4,15 +4,14 @@ module.exports = (config) => {
     basePath: __dirname,
     frameworks: ['mocha', 'sinon-chai'],
     files: [
-      'source/**/*.js',
-      'tests/**/*.js'
+      'source/**/*.spec.js',
+      'tests/**/*.spec.js',
     ],
     exclude: [],
 
     preprocessors: {
-      'source/**/!(*.spec).js': ['coverage', 'webpack'],
-      'source/**/*.spec.js': ['webpack'],
-      'tests/**/*.js': ['webpack']
+      'source/**/*.js': ['webpack', 'sourcemap'],
+      'tests/**/*.js': ['webpack', 'sourcemap'],
     },
     reporters: ['coverage', 'progress', 'coveralls'],
     coverageReporter: {
@@ -20,21 +19,35 @@ module.exports = (config) => {
       dir: 'coverage/'
     },
     webpack: {
-      loaders: [
-        {
-          test: /\.js$/,
-          loader: 'babel-loader'
-        }
-      ]
+      resolve: {
+        extensions: ['.js']
+      },
+      module: {
+        loaders: [
+          {
+            test: /\.js$/,
+            loader: 'babel-loader?plugins[]=istanbul',
+          }
+        ]
+      },
+      devtool: 'inline-source-map',
     },
     webpackMiddleware: {
       noInfo: true,
       stats: {
-        chunks: false
-      }
+        chunks: false,
+        colors: true
+      },
+      stats: 'errors-only'
     },
     plugins: [
-      require('karma-webpack')
+      require('karma-webpack'),
+      require('karma-coverage'),
+      require('karma-coveralls'),
+      require('karma-firefox-launcher'),
+      require('karma-sourcemap-loader'),
+      require('karma-mocha'),
+      require('karma-sinon-chai'),
     ],
     port: 9876,
     colors: true,
@@ -43,7 +56,7 @@ module.exports = (config) => {
     logLevel: config.LOG_INFO,
     // enable / disable watching file and executing tests whenever any file changes
     autoWatch: true,
-    browsers: ['Chrome'],
+    browsers: ['Firefox'],
     //browsers: ['Chrome', 'IE', 'Firefox'],
     // Continuous Integration mode
     // if true, Karma captures browsers, runs the tests and exits

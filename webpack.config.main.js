@@ -19,12 +19,27 @@ module.exports = {
         test: /\.js$/,
         include: [
           p('source'),
-          p('tests')
+          p('tests'),
         ],
-        loader: 'babel-loader'
-      }
-    ]
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: [
+              ['env', {
+                targets: {
+                  browsers: ['last 2 versions'],
+                  node: '8.4.0',
+                },
+              }],
+            ],
+            plugins: [
+              'transform-flow-strip-types',
+              'transform-class-properties',
+            ],
+          },
+        },
+      },
+    ],
   },
   devtool: 'source-map'
 };
-

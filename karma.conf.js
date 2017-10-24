@@ -1,3 +1,5 @@
+const { getBabelLoader } = require('./webpack.helpers');
+
 // Karma configuration
 module.exports = (config) => {
   config.set({
@@ -5,13 +7,11 @@ module.exports = (config) => {
     frameworks: ['mocha', 'sinon-chai'],
     files: [
       'source/**/*.spec.js',
-      'tests/**/*.spec.js',
     ],
     exclude: [],
 
     preprocessors: {
       'source/**/*.js': ['webpack', 'sourcemap'],
-      'tests/**/*.js': ['webpack', 'sourcemap'],
     },
     reporters: ['coverage', 'progress', 'coveralls'],
     coverageReporter: {
@@ -23,11 +23,11 @@ module.exports = (config) => {
         extensions: ['.js']
       },
       module: {
-        loaders: [
+        rules: [
           {
             test: /\.js$/,
-            loader: 'babel-loader?plugins[]=istanbul',
-          }
+            use: getBabelLoader(['babel-plugin-istanbul']),
+          },
         ]
       },
       devtool: 'inline-source-map',

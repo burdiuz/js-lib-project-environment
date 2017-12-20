@@ -1,4 +1,7 @@
-#JS-Lib-Environment
+# JS-Lib-Environment  
+
+> TODO: Migrate to rollup and jest(mocking with inject-loader is the pain in the ass).
+
 Environment setup for library project development.  
 After installation replace values of `LIBRARY_FILE_NAME` and `LIBRARY_VAR_NAME` in `webpack.helpers.js`.
 * `LIBRARY_FILE_NAME` - distribution file name

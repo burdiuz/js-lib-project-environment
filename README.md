@@ -1,4 +1,9 @@
-# JS-Lib-Environment  
+# JS-Lib-Environment
+
+> Note: Since Rollup currently does not support some thing which are not yet standard (object spread, class fields, etc.), 
+> I've used babel for transpiling code with specific set of plugins for such things.  
+  
+> Note: This is rollup + jest setup, to get webpack + karma + chai + sinon setup in "webpack_chai" branch.
 
 Environment setup for library project development.  
 After installation replace values of `LIBRARY_FILE_NAME` and `LIBRARY_VAR_NAME` in `webpack.helpers.js`.

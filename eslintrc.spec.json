@@ -14,7 +14,6 @@
     "node": true
   },
   "globals": {
-    "sinon": true,
     "expect": true,
     "assert": true,
     "before": true,
@@ -30,12 +29,10 @@
       "error",
       "WithStatement"
     ],
-    "no-unused-expressions": 0,
     "arrow-parens": [
       "error",
       "always"
     ],
-    "import/no-webpack-loader-syntax": 0,
     "no-unused-vars": 1,
     "arrow-body-style": 1,
     "no-shadow": 1,

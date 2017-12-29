@@ -24,6 +24,7 @@ module.exports = {
         use: getBabelLoader(),
       },
     ],
+    strictExportPresence: true,
   },
   devtool: 'source-map',
 };

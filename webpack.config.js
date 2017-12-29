@@ -9,9 +9,9 @@ const minConfig = Object.assign({}, mainConfig, {
   plugins: [
     new webpack.optimize.UglifyJsPlugin({
       compress: {
-        warnings: false
+        warnings: false,
       },
-      sourceMap: true
+      sourceMap: true,
     })
   ]
 });
@@ -31,4 +31,3 @@ module.exports = [
   directConfig,
   minConfig,
 ];
-

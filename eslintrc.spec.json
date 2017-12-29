@@ -15,7 +15,13 @@
   },
   "globals": {
     "sinon": true,
-    "expect": true
+    "expect": true,
+    "assert": true,
+    "before": true,
+    "after": true,
+    "beforeEach": true,
+    "afterEach": true,
+    "describe": true
   },
   "rules": {
     "linebreak-style": 0,
@@ -29,6 +35,7 @@
       "error",
       "always"
     ],
+    "import/no-webpack-loader-syntax": 0,
     "no-unused-vars": 1,
     "arrow-body-style": 1,
     "no-shadow": 1,

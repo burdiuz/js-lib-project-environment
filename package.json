@@ -49,9 +49,8 @@
     "uglify-es": "^3.3.9"
   },
   "lint-staged": {
-    "source/**/!(__tests__/).js": "eslint --fix",
-    "{source/**/__tests__/*.js,source/**/__mocks__/*.js}": "eslint -c eslintrc.spec.json --fix",
     "source/**/*.js": [
+      "eslint --fix",
       "prettier --write",
       "git add"
     ]
@@ -99,13 +98,12 @@
     "start": "build",
     "build": "rollup --config",
     "build:watch": "rollup --config --watch \"./source\"",
-    "lint": "./node_modules/.bin/eslint \"source/**/!(__tests__/)*.js\"",
-    "lint:spec": "./node_modules/.bin/eslint -c eslintrc.spec.json \"source/**/__tests__/*.js\"",
+    "lint": "./node_modules/.bin/eslint \"source/**/*.js\"",
     "flow": "./node_modules/.bin/flow",
     "server": "rollup --config rollup.serve.js",
     "test": "jest --colors",
     "test:watch": "jest --colors --watch",
     "lint-staged": "lint-staged",
-    "precommit": "npm run lint-staged && npm run build && npm run test"
+    "precommit": "npm run build && npm run test && npm run lint-staged"
   }
 }

@@ -1,9 +1,8 @@
-export const obj = {};
-export const myFunc = () => {
-};
+import MyClass from './MyClass';
 
-export class MyClass {
-  myMethod = (arg: Number): Boolean => !!arg;
-}
+export const obj = {};
+export const myFunc = () => {};
+
+export { MyClass };
 
 export default 'Oh My!';

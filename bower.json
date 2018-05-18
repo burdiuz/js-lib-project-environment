@@ -3,7 +3,7 @@
   "description": "",
   "version": "0.0.0",
   "main": [
-    "dist/lib.direct.js"
+    "dist/lib.min.js"
   ],
   "moduleType": [
     "globals"

@@ -22,38 +22,38 @@ export const plugins = [
     exclude: 'node_modules/**',
     externalHelpers: true,
     babelrc: false,
-  }), 
-  commonjs(), 
+  }),
+  commonjs(),
   json(),
 ];
 
 export const baseConfig = {
-    input: 'source/index.js',
-    output: [
-      {
-        file: `dist/${LIBRARY_FILE_NAME}.js`,
-        sourcemap: true,
-        exports: 'named',
-        name: LIBRARY_VAR_NAME,
-        format: 'umd',
-      },
-    ],
-    plugins,
-  };
-  
+  input: 'source/index.js',
+  output: [
+    {
+      file: `dist/${LIBRARY_FILE_NAME}.js`,
+      sourcemap: true,
+      exports: 'named',
+      name: LIBRARY_VAR_NAME,
+      format: 'umd',
+    },
+  ],
+  plugins,
+};
+
 export const minConfig = {
-    input: 'source/index.js',
-    output: [
-      {
-        file: `dist/${LIBRARY_FILE_NAME}.min.js`,
-        sourcemap: true,
-        exports: 'named',
-        name: LIBRARY_VAR_NAME,
-        format: 'umd',
-      },
-    ],
-    plugins: [
-      ...plugins,
-      uglify({}, minify),
-    ],
-  };
+  input: 'source/index.js',
+  output: [
+    {
+      file: `dist/${LIBRARY_FILE_NAME}.min.js`,
+      sourcemap: true,
+      exports: 'named',
+      name: LIBRARY_VAR_NAME,
+      format: 'umd',
+    },
+  ],
+  plugins: [
+    ...plugins,
+    uglify({}, minify),
+  ],
+};

@@ -1,31 +1,25 @@
-(function (global, factory) {
-  typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports) :
-  typeof define === 'function' && define.amd ? define(['exports'], factory) :
-  (factory((global.lib = {})));
-}(this, (function (exports) { 'use strict';
+'use strict';
 
-  class MyClass {
-    constructor() {
-      this.value = 'void';
+Object.defineProperty(exports, '__esModule', { value: true });
 
-      this.myMethod = arg => !!arg;
+class MyClass {
+  constructor() {
+    this.value = 'void';
 
-      this.mySpreadMethod = (...args) => args;
-    }
+    this.myMethod = arg => !!arg;
 
+    this.mySpreadMethod = (...args) => args;
   }
 
-  const obj = {};
-  const myFunc = () => {};
+}
 
-  var index = 'Oh My!';
+const obj = {};
+const myFunc = () => {};
 
-  exports.obj = obj;
-  exports.myFunc = myFunc;
-  exports.MyClass = MyClass;
-  exports.default = index;
+var index = 'Oh My!';
 
-  Object.defineProperty(exports, '__esModule', { value: true });
-
-})));
+exports.obj = obj;
+exports.myFunc = myFunc;
+exports.MyClass = MyClass;
+exports.default = index;
 //# sourceMappingURL=lib.js.map

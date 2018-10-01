@@ -5,7 +5,7 @@
 
 > Note: This is rollup + jest setup, to get webpack + karma + chai + sinon setup check [webpack_chai](https://github.com/burdiuz/js-lib-project-environment/tree/webpack_chai) branch.
 
-Environment setup for library project development, requires [rollup](https://rollupjs.org/guide/en) to be installed globally.
+Environment setup for library project development, requires [rollup](https://rollupjs.org/guide/en)  v 0.66 or higher to be installed globally.
 ```
 npm install rollup -g
 ```
@@ -23,3 +23,7 @@ NPM commands:
 * `npm run build:watch` - run rollup in watch mode
 * `npm run test:watch` - run tests in watch mode
 * `npm run lint` - run ESLint for project files(including test files) in `/source` folder.
+
+### Notes
+
+Package `babel-plugin-transform-object-rest-spread` currently installed with `next` version because `latest` is incompatible with babel v.7.

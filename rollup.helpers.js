@@ -17,8 +17,8 @@ export const plugins = [
     plugins: [
       '@babel/plugin-external-helpers',
       '@babel/plugin-transform-flow-strip-types',
+      '@babel/plugin-syntax-object-rest-spread',
       'babel-plugin-transform-class-properties',
-      ['babel-plugin-transform-object-rest-spread', { useBuiltIns: true }],
     ],
     exclude: 'node_modules/**',
     externalHelpers: true,

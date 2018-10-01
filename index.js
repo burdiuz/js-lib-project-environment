@@ -14,7 +14,10 @@ class MyClass {
 }
 
 const obj = {};
-const myFunc = () => {};
+const myFunc = (arg1, arg2, ...list) => ({ ...arg1,
+  ...arg2,
+  list
+});
 var index = 'Oh My!';
 
 exports.obj = obj;

@@ -23,7 +23,3 @@ NPM commands:
 * `npm run build:watch` - run rollup in watch mode
 * `npm run test:watch` - run tests in watch mode
 * `npm run lint` - run ESLint for project files(including test files) in `/source` folder.
-
-### Notes
-
-Package `babel-plugin-transform-object-rest-spread` currently installed with `next` version because `latest` is incompatible with babel v.7.

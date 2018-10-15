@@ -1,5 +1,8 @@
 # JS-Lib-Environment
 
+TODO: 
+1. make jest to work with babel 7 and grab babel config from package.json > babel.env.test
+
 > Note: Since Rollup currently does not support some things which are not yet standard(like class fields),
 > I've used babel for transpiling code with specific set of plugins for such things.
 

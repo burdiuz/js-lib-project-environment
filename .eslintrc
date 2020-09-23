@@ -2,10 +2,11 @@
   "parser": "babel-eslint",
   "extends": "airbnb",
   "parserOptions": {
-    "ecmaVersion": 6,
+    "ecmaVersion": 2018,
     "ecmaFeatures": {
-      "impliedStrict": true,
-      "experimentalObjectRestSpread": true
+      "jsx": true,
+      "modules": true,
+      "impliedStrict": true
     }
   },
   "env": {

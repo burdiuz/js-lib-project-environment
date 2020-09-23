@@ -18,36 +18,33 @@
     "type": "git",
     "url": "https://github.com/burdiuz/js-lib-environment.git"
   },
-  "dependencies": {},
+  "dependencies": {
+    "babel-plugin-istanbul": "^6.0.0"
+  },
   "devDependencies": {
-    "@babel/core": "^7.1.2",
-    "@babel/plugin-external-helpers": "^7.0.0",
-    "@babel/plugin-syntax-object-rest-spread": "^7.0.0",
-    "@babel/plugin-transform-flow-strip-types": "^7.0.0",
-    "babel-eslint": "^10.0.1",
-    "babel-loader": "^8.0.4",
-    "babel-plugin-istanbul": "^5.0.1",
+    "@babel/core": "^7.11.6",
+    "@babel/plugin-transform-modules-commonjs": "^7.10.4",
+    "@babel/plugin-transform-runtime": "^7.11.5",
+    "@rollup/plugin-babel": "^5.2.1",
+    "@rollup/plugin-commonjs": "^15.1.0",
+    "@rollup/plugin-json": "^4.1.0",
+    "@rollup/plugin-node-resolve": "^9.0.0",
+    "@rollup/plugin-url": "^5.0.1",
+    "babel-eslint": "^10.1.0",
+    "babel-jest": "^26.3.0",
     "babel-plugin-transform-class-properties": "^6.24.1",
-    "babel-plugin-transform-es2015-modules-commonjs": "^6.26.2",
-    "babel-preset-jest": "^23.2.0",
-    "chokidar": "^2.0.4",
-    "eslint": "^5.6.1",
-    "eslint-config-airbnb": "^17.1.0",
-    "eslint-plugin-import": "^2.14.0",
-    "eslint-plugin-jsx-a11y": "^6.1.1",
-    "eslint-plugin-react": "^7.11.1",
-    "flow-bin": "^0.81.0",
-    "husky": "^1.0.1",
-    "jest": "^23.6.0",
-    "lint-staged": "^7.3.0",
-    "prettier": "^1.14.3",
-    "rollup-plugin-babel": "^4.0.3",
-    "rollup-plugin-commonjs": "^9.1.8",
-    "rollup-plugin-json": "^3.1.0",
-    "rollup-plugin-livereload": "^0.6.0",
-    "rollup-plugin-node-resolve": "^3.4.0",
-    "rollup-plugin-serve": "^0.6.0",
-    "rollup-plugin-terser": "^3.0.0"
+    "eslint": "^7.9.0",
+    "eslint-config-airbnb": "^18.2.0",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-jsx-a11y": "^6.3.1",
+    "eslint-plugin-react": "^7.21.0",
+    "husky": "^4.3.0",
+    "jest": "^26.4.2",
+    "lint-staged": "^10.4.0",
+    "prettier": "^2.1.2",
+    "rollup-plugin-livereload": "^2.0.0",
+    "rollup-plugin-serve": "^1.0.4",
+    "rollup-plugin-terser": "^7.0.2"
   },
   "lint-staged": {
     "source/**/*.js": [
@@ -60,15 +57,8 @@
     "env": {
       "test": {
         "plugins": [
-          "babel-plugin-transform-es2015-modules-commonjs",
-          "babel-plugin-transform-flow-strip-types",
-          "babel-plugin-transform-class-properties",
-          [
-            "babel-plugin-transform-object-rest-spread",
-            {
-              "useBuiltIns": true
-            }
-          ]
+          "@babel/plugin-transform-modules-commonjs",
+          "babel-plugin-transform-class-properties"
         ],
         "presets": [
           "jest"
@@ -97,7 +87,6 @@
     "build": "rollup --config",
     "build:watch": "rollup --config --watch \"./source\"",
     "lint": "./node_modules/.bin/eslint \"source/**/*.js\"",
-    "flow": "./node_modules/.bin/flow",
     "server": "rollup --config rollup.serve.js",
     "test": "jest --colors",
     "test:watch": "jest --colors --watch",

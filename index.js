@@ -13,6 +13,8 @@ class MyClass {
 
 }
 
+MyClass.EVENT = 'MyEvent';
+
 const obj = {};
 const myFunc = (arg1, arg2, ...list) => ({ ...arg1,
   ...arg2,
@@ -20,8 +22,8 @@ const myFunc = (arg1, arg2, ...list) => ({ ...arg1,
 });
 var index = 'Oh My!';
 
-exports.obj = obj;
-exports.myFunc = myFunc;
 exports.MyClass = MyClass;
 exports.default = index;
+exports.myFunc = myFunc;
+exports.obj = obj;
 //# sourceMappingURL=index.js.map

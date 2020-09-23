@@ -1,8 +1,8 @@
-import resolve from 'rollup-plugin-node-resolve';
-import commonjs from 'rollup-plugin-commonjs';
-import babel from 'rollup-plugin-babel';
-//import flow from 'rollup-plugin-flow';
-import json from 'rollup-plugin-json';
+import resolve from '@rollup/plugin-node-resolve';
+import commonjs from '@rollup/plugin-commonjs';
+import babel from '@rollup/plugin-babel';
+import json from '@rollup/plugin-json';
+import url from '@rollup/plugin-url';
 import { terser } from 'rollup-plugin-terser';
 
 export const DESTINATION_FOLDER = 'dist';
@@ -12,20 +12,18 @@ export const LIBRARY_VAR_NAME = 'lib'; // dummy, replace with project name
 
 export const plugins = [
   resolve(),
-  //flow(),
   babel({
     plugins: [
-      '@babel/plugin-external-helpers',
-      '@babel/plugin-transform-flow-strip-types',
-      '@babel/plugin-syntax-object-rest-spread',
+      '@babel/plugin-transform-runtime',
       'babel-plugin-transform-class-properties',
     ],
     exclude: 'node_modules/**',
-    externalHelpers: true,
+    babelHelpers: 'runtime',
     babelrc: false,
   }),
   commonjs(),
   json(),
+  url(),
 ];
 
 export const cjsConfig = {
@@ -39,8 +37,7 @@ export const cjsConfig = {
     },
   ],
   plugins,
-  external: [
-  ],
+  external: [],
 };
 
 const makeUMDConfig = (suffix = '', additionalPlugins = []) => ({
